@@ -1,6 +1,6 @@
 from math import log
 import collections
-# test
+
 
 def createDataSet():
     dataSet = [[0, 0, 0, 0, 'no'],         
