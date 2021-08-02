@@ -3,7 +3,6 @@ from sklearn import datasets
 from sklearn.metrics import confusion_matrix, roc_curve, auc
 import matplotlib.pyplot as plt
 import random
-import copy
 import argparse
 import seaborn
 
