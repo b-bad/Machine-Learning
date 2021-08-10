@@ -73,3 +73,26 @@ class kdTree:
         self.__length += 1
         return node
 
+    def find_nearest_node(self, item):
+
+        itemArray = np.array(item)
+        if self.__length == 0:
+            return None
+        node = self.__root
+        if self.__length == 1:
+            return node
+        while True:
+            current_dim = node.data_dim
+            if itemArray[current_dim] == node.data[current_dim]:
+                return node
+            elif itemArray[current_dim] < node.data[current_dim]:
+                if node.left_child == None:
+                    return node
+                else:
+                    node = node.left_child
+            else:
+                if node.right_child == None:
+                    return node
+                else:
+                    node = node.right_child
+    
