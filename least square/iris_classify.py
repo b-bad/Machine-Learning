@@ -37,7 +37,7 @@ def load_data(class_1=0, class_2=1):
 
 class leastSquare:
 
-    def __init__(self, testSet:list, trainSet:list, learningRate=0.001, threshold=0.00001, epochs=50) -> None:
+    def __init__(self, testSet:list, trainSet:list, learningRate=0.001, threshold=0.00001, epochs=50, useAdam=False) -> None:
         
         self.testSet = testSet
         self.trainSet = trainSet
@@ -58,6 +58,7 @@ class leastSquare:
         self.trainedFlag = False
         self.pre_labels = []
         self.pre_y = []
+        self.useAdam = useAdam
 
     def calSquareError(self, B):
 
