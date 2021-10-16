@@ -57,7 +57,7 @@ class LogisticRegression:
         """
         return -np.log(self.sigmoid(np.diag(y_hat.dot(self.y.T)))).sum()
 
-    def gsd(self):
+    def gd(self):
         for i in range(self.X_num):
             self.W += self.sigmoid(-self.y[0, i] * self.W * self.X[i]) * self.y[0, i] * self.X[i] * self.lr
 
@@ -66,7 +66,7 @@ class LogisticRegression:
         e_cnt = 0
         for i in range(self.epoch):
             l = self.loss(np.dot(self.W, self.X.T))
-            self.gsd()
+            self.gd()
             l_list.append(l)
             print("epoch %d : loss is %f" %(i, l))
             e_cnt += 1
